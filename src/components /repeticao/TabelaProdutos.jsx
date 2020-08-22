@@ -6,7 +6,7 @@ export default props => {
 
     const lis = produtos.map((produto, i) => {
         return (
-            <tr key={produto.id} className={i % 2 == 0 ? 'Par' : 'Impar'}>
+            <tr key={produto.id} className={i % 2 === 0 ? 'Par' : 'Impar'}>
                 <td>{produto.id}</td>        
                 <td>{produto.name}</td>        
                 <td>R$ {produto.price.toFixed(2).replace('.', ',')}</td>        
@@ -16,12 +16,14 @@ export default props => {
     return (
         <div className="TabelaProdutos">
             <table>
+                <tbody>
                 <tr>
                 <th>Id</th>
                 <th>Produto</th>
                 <th>Preço</th>
                 </tr>
                 {lis}
+                </tbody>
             </table>
         </div>
     )
